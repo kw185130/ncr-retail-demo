@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { Card, CardBody, Col, Container, Row, Button } from 'reactstrap';
 import { UserCartContext } from '~/context/userCart';
@@ -14,9 +14,14 @@ export default function Cart() {
   const { userStore } = useContext(UserStoreContext);
   const { data, isLoading, isError } = useUserCart(userCart, userStore);
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchCart();
   }, [userCart]);
+
+  // useEffect(() => {
+  //   console.log('meow');
+  //   console.log(data);
+  // });
 
   const fetchCart = () => {
     mutate(`/api/cart/${userStore.id}/${userCart.location}`);

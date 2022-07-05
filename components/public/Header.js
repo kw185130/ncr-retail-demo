@@ -45,7 +45,9 @@ export default function Header({ logs }) {
           <Container>
             <Row className="align-items-center">
               <Col sm="4" md="3">
-                <a href="/" className="logo-text">MART</a>
+                <a href="/" className="logo-text">
+                  MART
+                </a>
               </Col>
               <Col sm="8" md="5">
                 <SearchBar />
@@ -59,6 +61,7 @@ export default function Header({ logs }) {
                     <a href="/cart" style={{ border: 'none !important' }}>
                       <Button color="light" outline className="border-none cart-btn">
                         <FontAwesomeIcon icon={faShoppingCart} size="1x" className="pr-1" /> Cart
+                        {/* WTF IS TODO: userCart.totalQuantity coming from? */}
                         {userCart && userCart.totalQuantity != null && userCart.totalQuantity > 0 && (
                           <Badge color="warning" className="ml-1">
                             {userCart.totalQuantity}

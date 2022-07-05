@@ -71,7 +71,6 @@
     "@babel/preset-env": "^7.15.6",
     "@next/eslint-plugin-next": "^11.1.4",
     "cypress": "^6.8.0",
-    "eslint": "^7.27.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.23.2",
@@ -79,7 +78,6 @@
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
-    "patch-package": "^6.4.7",
-    "prettier": "^2.3.0"
+    "patch-package": "^6.4.7"
   }
 }

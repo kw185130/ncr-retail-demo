@@ -18,6 +18,7 @@ const ItemCard = ({ catalogItem = {}, showCartButton = true }) => {
     itemObj['quantity'] = 1;
     setAddingToCart(true);
     setAddedToCart(false);
+    // TODO: THIS BREAKS IF THERE IS NO LOCATION.
     fetch(`/api/cart`, {
       method: 'POST',
       body: JSON.stringify({
@@ -43,10 +44,10 @@ const ItemCard = ({ catalogItem = {}, showCartButton = true }) => {
     <Card className="border-0 shadow-sm item-card h-100">
       {item ? (
         <a href={item ? `/catalog/${item.itemId.itemCode}` : '#'} aria-label={item.shortDescription.values[0].value}>
-          <Image
+          {/* <Image
             alt={item.shortDescription.values ? item.shortDescription.values[0].value : item.shortDescription.value}
             src={
-                itemAttributes.imageUrls[0] !== '' && itemAttributes.imageUrls.length > 0 && itemAttributes.imageUrls[0] !== null
+              itemAttributes.imageUrls[0] !== '' && itemAttributes.imageUrls.length > 0 && itemAttributes.imageUrls[0] !== null
                 ? itemAttributes.imageUrls[0]
                 : 'https://via.placeholder.com/150'
             }
@@ -54,7 +55,7 @@ const ItemCard = ({ catalogItem = {}, showCartButton = true }) => {
             width={255}
             height={255}
             className="p-4"
-          />
+          /> */}
         </a>
       ) : (
         <div className="p-4">

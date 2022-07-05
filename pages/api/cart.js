@@ -4,11 +4,17 @@ export default async function handler(req, res) {
   let body = JSON.parse(req.body);
   if (body.etag == false || body.location == false) {
     let cart = await createCart(body.siteId);
+
     logs.push(cart.log);
+
     let location = cart.headers.get('location');
+    // console.log(location)
     let etag = cart.headers.get('ETag');
-    let cartId = location.split('/')[2];
+    // let cartId = location.split('/')[2];
+    let cartId = location.slice(6);
+    console.log(cartId)
     let item = body.item;
+    // console.log(item)
 
     let obj = {
       itemId: item.itemId.itemCode,
@@ -18,6 +24,8 @@ export default async function handler(req, res) {
         value: item.quantity
       }
     };
+    console.log("WTFD")
+    console.log(obj)
     let addToCart = await addItemToCart(body.siteId, cartId, etag, obj);
     logs.push(addToCart.log);
     res.status(addToCart.status).json({ etag, location: cartId, logs });
@@ -26,6 +34,10 @@ export default async function handler(req, res) {
     let etag = body.etag;
     let cartItems = await getCartItemsById(body.siteId, cartId);
     logs.push(cartItems.log);
+
+
+    console.log("else statement")
+    console.log(cartId)
 
     let item = body.item;
     let itemId = body.item.itemId.itemCode;
