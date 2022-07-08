@@ -44,18 +44,18 @@ const ItemCard = ({ catalogItem = {}, showCartButton = true }) => {
     <Card className="border-0 shadow-sm item-card h-100">
       {item ? (
         <a href={item ? `/catalog/${item.itemId.itemCode}` : '#'} aria-label={item.shortDescription.values[0].value}>
-          {/* <Image
-            alt={item.shortDescription.values ? item.shortDescription.values[0].value : item.shortDescription.value}
-            src={
-              itemAttributes.imageUrls[0] !== '' && itemAttributes.imageUrls.length > 0 && itemAttributes.imageUrls[0] !== null
-                ? itemAttributes.imageUrls[0]
-                : 'https://via.placeholder.com/150'
-            }
-            layout="responsive"
-            width={255}
-            height={255}
-            className="p-4"
-          /> */}
+          {/* <Image */}
+          {/*   alt={item.shortDescription.values ? item.shortDescription.values[0].value : item.shortDescription.value} */}
+          {/*   src={ */}
+          {/*     itemAttributes.imageUrls[0] !== '' && itemAttributes.imageUrls.length > 0 && itemAttributes.imageUrls[0] !== null */}
+          {/*       ? itemAttributes.imageUrls[0] */}
+          {/*       : 'https://via.placeholder.com/150' */}
+          {/*   } */}
+          {/*   layout="responsive" */}
+          {/*   width={255} */}
+          {/*   height={255} */}
+          {/*   className="p-4" */}
+          {/* /> */}
         </a>
       ) : (
         <div className="p-4">

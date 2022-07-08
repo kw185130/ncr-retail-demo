@@ -12,7 +12,7 @@ export default function CartCheckout({ userAPICart, isLoading = false }) {
         </dl>
         <dl className="row">
           <dt className="col-sm-6 text-muted">Taxes</dt>
-          <dd className="col-sm-6 text-right">--</dd>
+          <dd className="col-sm-6 text-right">{isLoading ? <Skeleton /> : Math.round((cartTotals.totals.taxAmounts.included + Number.EPSILON) * 100) / 100}</dd>
         </dl>
         <dl className="row">
           <dt className="col-sm-6">Total</dt>
