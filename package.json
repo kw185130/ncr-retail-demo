@@ -70,6 +70,7 @@
         "@babel/core": "^7.15.5",
         "@babel/preset-env": "^7.15.6",
         "@next/eslint-plugin-next": "^11.1.4",
+        "babel-eslint": "^10.1.0",
         "cypress": "^6.8.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-prettier": "^3.4.0",
@@ -78,6 +79,7 @@
         "eslint-plugin-simple-import-sort": "^7.0.0",
         "husky": "^6.0.0",
         "lint-staged": "^11.0.0",
-        "patch-package": "^6.4.7"
+        "patch-package": "^6.4.7",
+        "polyjuice": "^2.2.4"
     }
 }
