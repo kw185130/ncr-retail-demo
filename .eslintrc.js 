@@ -21,17 +21,26 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended' // Make this the last element so prettier config overrides other formatting rules
   ],
-  plugins: ['simple-import-sort'],
+  plugins: ['simple-import-sort'
+  ],
   rules: {
-    'prettier/prettier': ['error', { endOfLine: 'auto' }, { usePrettierrc: true }],
+    'prettier/prettier': ['error',
+      { endOfLine: 'auto'
+      },
+      { usePrettierrc: true
+      }
+    ],
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'jsx-a11y/anchor-is-valid': [
       'error',
       {
-        components: ['Link'],
-        specialLink: ['hrefLeft', 'hrefRight'],
-        aspects: ['invalidHref', 'preferButton']
+        components: ['Link'
+        ],
+        specialLink: ['hrefLeft', 'hrefRight'
+        ],
+        aspects: ['invalidHref', 'preferButton'
+        ]
       }
     ]
   }

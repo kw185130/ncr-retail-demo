@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-regular-svg-icons';
@@ -13,6 +13,10 @@ const ItemCard = ({ catalogItem = {}, showCartButton = true }) => {
   const [addingToCart, setAddingToCart] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
   const { userStore } = useContext(UserStoreContext);
+
+  useEffect(() => {
+    console.log(catalogItem)
+  })
 
   const handleAddToCart = async (itemObj) => {
     itemObj['quantity'] = 1;

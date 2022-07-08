@@ -29,8 +29,6 @@ export default async function handler(req, res) {
                 value: item.quantity,
             },
         };
-        console.log("WTFD");
-        console.log(obj);
         let addToCart = await addItemToCart(body.siteId, cartId, etag, obj);
         logs.push(addToCart.log);
         res.status(addToCart.status).json({ etag, location: cartId, logs });
