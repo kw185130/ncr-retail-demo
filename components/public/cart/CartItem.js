@@ -56,7 +56,6 @@ export default function CartItem({ location, item, itemKey }) {
         setQty(newQty);
       });
   };
-    console.log(item)
   return (
     <Row className="d-flex align-items-center">
       <Col sm="12" md="10">
