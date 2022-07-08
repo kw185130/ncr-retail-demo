@@ -28,6 +28,7 @@ export default function Cart() {
   };
 
   const emptyCart = () => {
+    // /api/cart/[id]/location
     fetch(`/api/cart/${userStore.id}/${userCart.location}`, {
       method: 'DELETE'
     })
