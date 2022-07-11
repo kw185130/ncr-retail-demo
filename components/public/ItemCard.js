@@ -53,7 +53,6 @@ const ItemCard = ({ catalogItem = {}, showCartButton = true }) => {
                 setAddedToCart(true);
             });
     };
-    console.log(item);
 
     return (
         <Card className="border-0 shadow-sm item-card h-100">
@@ -70,12 +69,13 @@ const ItemCard = ({ catalogItem = {}, showCartButton = true }) => {
                         }
                         src={
                             itemAttributes.imageUrls[0] !== "" &&
-                            itemAttributes.imageUrls.length > 0 &&
-                            itemAttributes.imageUrls[0] !== null
+                                itemAttributes.imageUrls.length > 0 &&
+                                itemAttributes.imageUrls[0] !== null
                                 ? itemAttributes.imageUrls[0]
                                 : "https://via.placeholder.com/150"
                         }
                         layout="responsive"
+                        objectFit="cover"
                         width={255}
                         height={255}
                         className="p-4"
@@ -111,9 +111,8 @@ const ItemCard = ({ catalogItem = {}, showCartButton = true }) => {
                 </CardBody>
             )}
             <CardFooter
-                className={`bg-white font-weight-bold h6 ${
-                    !item && "card-footer-loading"
-                }`}
+                className={`bg-white font-weight-bold h6 ${!item && "card-footer-loading"
+                    }`}
             >
                 <Row>
                     <Col md="12" className="mb-2">
@@ -131,9 +130,8 @@ const ItemCard = ({ catalogItem = {}, showCartButton = true }) => {
                         <Col sm="12" md="12">
                             <Button
                                 block
-                                className={`float-right ${
-                                    addedToCart && "fade-btn"
-                                }`}
+                                className={`float-right ${addedToCart && "fade-btn"
+                                    }`}
                                 color={addedToCart ? "success" : "primary"}
                                 outline
                                 onClick={() => handleAddToCart(item)}
