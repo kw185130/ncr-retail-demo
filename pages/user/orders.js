@@ -35,7 +35,7 @@ const Orders = () => {
 
   return (
     <OrderLayout data={data}>
-      {data && data.data && data.data.data.pageContent.length == 0 ? (
+      {!data.data.data.pageContent ? (
         <Col sm="9">
           <Card className="shadow-sm">
             <CardBody>

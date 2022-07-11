@@ -2,6 +2,7 @@ import { createOrder } from "~/lib/order";
 import { updateUserCartStatus } from "~/lib/cart";
 
 export default async function handler(req, res) {
+    console.log("order called)")
     if (req.method === "POST") {
         let logs = [];
         let body = JSON.parse(req.body);
