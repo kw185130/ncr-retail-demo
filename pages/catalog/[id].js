@@ -142,8 +142,7 @@ const CatalogItem = ({ id }) => {
                 !isLoading &&
                 data &&
                 data.catalogItem &&
-                data.catalogItem.data.pageContent[0].item.shortDescription
-                    .values[0].value
+                data.catalogItem.data.item.shortDescription.values[0].value
             }
         >
             <Container className="my-4 flex-grow-1">
@@ -164,22 +163,19 @@ const CatalogItem = ({ id }) => {
                             {data.catalogItem && (
                                 <Image
                                     src={
-                                        data.catalogItem.data.pageContent[0]
-                                            .itemAttributes &&
-                                        data.catalogItem.data.pageContent[0]
-                                            .itemAttributes.imageUrls.length > 0
+                                        data.catalogItem.data.itemAttributes &&
+                                        data.catalogItem.data.itemAttributes
+                                            .imageUrls.length > 0
                                             ? data.catalogItem.data
-                                                  .pageContent[0].itemAttributes
-                                                  .imageUrls[0]
+                                                  .itemAttributes.imageUrls[0]
                                             : "https://via.placeholder.com/500"
                                     }
                                     layout="responsive"
                                     width={500}
                                     height={500}
                                     alt={
-                                        data.catalogItem.data.pageContent[0]
-                                            .item.shortDescription.values[0]
-                                            .value
+                                        data.catalogItem.data.item
+                                            .shortDescription.values[0].value
                                     }
                                     className="p-4"
                                 />
@@ -193,8 +189,8 @@ const CatalogItem = ({ id }) => {
                                         className="bd-highlight"
                                     >
                                         {
-                                            data.catalogItem.data.pageContent[0]
-                                                .item.shortDescription.values[0]
+                                            data.catalogItem.data.item
+                                                .shortDescription.values[0]
                                                 .value
                                         }
                                     </CardTitle>
@@ -203,17 +199,16 @@ const CatalogItem = ({ id }) => {
                                     <CardSubtitle className="mb-2 text-muted">
                                         <strong>Item #:</strong>{" "}
                                         {
-                                            data.catalogItem.data.pageContent[0]
-                                                .item.itemId.itemCode
+                                            data.catalogItem.data.item.itemId
+                                                .itemCode
                                         }
                                     </CardSubtitle>
                                 )}
                                 {data.catalogItem && (
                                     <CardText>
                                         {
-                                            data.catalogItem.data.pageContent[0]
-                                                .item.longDescription.values[0]
-                                                .value
+                                            data.catalogItem.data.item
+                                                .longDescription.values[0].value
                                         }
                                     </CardText>
                                 )}
@@ -223,9 +218,8 @@ const CatalogItem = ({ id }) => {
                                             {data.catalogItem && (
                                                 <h3 className="text-muted">
                                                     {data.catalogItem.data
-                                                        .pageContent[0]
                                                         .itemPrices
-                                                        ? `${data.catalogItem.data.pageContent[0].itemPrices[0].price}`
+                                                        ? `${data.catalogItem.data.itemPrices[0].price}`
                                                         : "Not available at this store"}
                                                 </h3>
                                             )}
@@ -260,9 +254,7 @@ const CatalogItem = ({ id }) => {
                                                     onClick={() =>
                                                         handleAddToCart(
                                                             data.catalogItem
-                                                                .data
-                                                                .pageContent[0]
-                                                                .item
+                                                                .data.item
                                                         )
                                                     }
                                                     className={`${
