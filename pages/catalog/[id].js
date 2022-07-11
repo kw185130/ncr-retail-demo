@@ -164,11 +164,13 @@ const CatalogItem = ({ id }) => {
                             {data.catalogItem && (
                                 <Image
                                     src={
-                                        data.catalogItem.data.itemAttributes &&
-                                        data.catalogItem.data.itemAttributes
-                                            .imageUrls.length > 0
+                                        data.catalogItem.data.pageContent[0]
+                                            .itemAttributes &&
+                                        data.catalogItem.data.pageContent[0]
+                                            .itemAttributes.imageUrls.length > 0
                                             ? data.catalogItem.data
-                                                  .itemAttributes.imageUrls[0]
+                                                  .pageContent[0].itemAttributes
+                                                  .imageUrls[0]
                                             : "https://via.placeholder.com/500"
                                     }
                                     layout="responsive"

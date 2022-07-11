@@ -68,7 +68,9 @@ export default async function handler(req, res) {
             });
         });
 
+        console.log("here creating order");
         let result = await createOrder(store.id, order);
+        console.log(result);
         logs.push(result.log);
 
         let userCart = body.userCart;
