@@ -19,8 +19,8 @@ export default function Cart() {
     }, [userCart]);
 
     // useEffect(() => {
-    //   console.log('meow');
-    //   console.log(data);
+    //     console.log("meow");
+    //     console.log(data);
     // });
 
     const fetchCart = () => {
@@ -35,9 +35,14 @@ export default function Cart() {
             .then((response) => {
                 response.json();
                 console.log(response);
+                console.log(userCart);
             })
             .then(() => {
-                setUserCart({ totalQuantity: 0, etag: null, location: null });
+                setUserCart({
+                    totalQuantity: 0,
+                    etag: userCart.etag,
+                    location: userCart.location,
+                });
             });
     };
 
@@ -89,7 +94,9 @@ export default function Cart() {
         <CartLayout data={data}>
             <Col md="8">
                 <Card className="mb-2 cart-card">
-                    {!data || data.cartItems.data.pageContent.length == 0 ? (
+                    {!data ||
+                    !data.cartItems ||
+                    data.cartItems.data.pageContent.length == 0 ? (
                         <CardBody className="">No cart items.</CardBody>
                     ) : (
                         <CartList
