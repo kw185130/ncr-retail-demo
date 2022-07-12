@@ -164,13 +164,14 @@ const CatalogItem = ({ id }) => {
                                 <Image
                                     src={
                                         data.catalogItem.data.itemAttributes &&
-                                        data.catalogItem.data.itemAttributes
-                                            .imageUrls.length > 0
+                                            data.catalogItem.data.itemAttributes
+                                                .imageUrls.length > 0
                                             ? data.catalogItem.data
-                                                  .itemAttributes.imageUrls[0]
+                                                .itemAttributes.imageUrls[0]
                                             : "https://via.placeholder.com/500"
                                     }
                                     layout="responsive"
+                                    objectFit="cover"
                                     width={500}
                                     height={500}
                                     alt={
@@ -260,10 +261,9 @@ const CatalogItem = ({ id }) => {
                                                                 .data.item
                                                         )
                                                     }
-                                                    className={`${
-                                                        addedToCart &&
+                                                    className={`${addedToCart &&
                                                         "fade-btn"
-                                                    }`}
+                                                        }`}
                                                     color={
                                                         addedToCart
                                                             ? "success"
