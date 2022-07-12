@@ -22,9 +22,6 @@ const ItemCard = ({ catalogItem = {}, showCartButton = true }) => {
     const [addedToCart, setAddedToCart] = useState(false);
     const { userStore } = useContext(UserStoreContext);
 
-    useEffect(() => {
-        console.log(catalogItem);
-    });
 
     const handleAddToCart = async (itemObj) => {
         itemObj["quantity"] = 1;
@@ -69,8 +66,8 @@ const ItemCard = ({ catalogItem = {}, showCartButton = true }) => {
                         }
                         src={
                             itemAttributes.imageUrls[0] !== "" &&
-                            itemAttributes.imageUrls.length > 0 &&
-                            itemAttributes.imageUrls[0] !== null
+                                itemAttributes.imageUrls.length > 0 &&
+                                itemAttributes.imageUrls[0] !== null
                                 ? itemAttributes.imageUrls[0]
                                 : "https://via.placeholder.com/150"
                         }
@@ -97,8 +94,8 @@ const ItemCard = ({ catalogItem = {}, showCartButton = true }) => {
                         >
                             {item.shortDescription.values
                                 ? item.shortDescription.values.filter(
-                                      (element) => element.locale == "en-US"
-                                  )[0].value
+                                    (element) => element.locale == "en-US"
+                                )[0].value
                                 : item.shortDescription.value}
                         </a>
                     </div>
@@ -113,9 +110,8 @@ const ItemCard = ({ catalogItem = {}, showCartButton = true }) => {
                 </CardBody>
             )}
             <CardFooter
-                className={`bg-white font-weight-bold h6 ${
-                    !item && "card-footer-loading"
-                }`}
+                className={`bg-white font-weight-bold h6 ${!item && "card-footer-loading"
+                    }`}
             >
                 <Row>
                     <Col md="12" className="mb-2">
@@ -133,9 +129,8 @@ const ItemCard = ({ catalogItem = {}, showCartButton = true }) => {
                         <Col sm="12" md="12">
                             <Button
                                 block
-                                className={`float-right ${
-                                    addedToCart && "fade-btn"
-                                }`}
+                                className={`float-right ${addedToCart && "fade-btn"
+                                    }`}
                                 color={addedToCart ? "success" : "primary"}
                                 outline
                                 onClick={() => handleAddToCart(item)}

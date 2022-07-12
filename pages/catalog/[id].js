@@ -68,7 +68,7 @@ const CatalogItem = ({ id }) => {
         const qty = parseInt(event.target.value);
         setItemQuantity(qty);
     };
-    console.log(data);
+    // console.log(data);
     if (isLoading) {
         return (
             <Layout>
@@ -222,8 +222,8 @@ const CatalogItem = ({ id }) => {
                                                     {data.catalogItem.data
                                                         .itemPrices
                                                         ? `${data.catalogItem.data.itemPrices[0].price.toFixed(
-                                                              2
-                                                          )}`
+                                                            2
+                                                        )}`
                                                         : "Not available at this store"}
                                                 </h3>
                                             )}

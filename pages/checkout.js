@@ -45,7 +45,7 @@ const Checkout = ({ session }) => {
     }
 
     const purchase = async () => {
-        console.log("here in purchase");
+        // console.log("here in purchase");
         setIsPurchasing(true);
         let userOrder = order;
         userOrder["cart"] = data.cart.data;

@@ -7,9 +7,9 @@ import Layout from "~/components/public/Layout";
 
 export default function Catalog({ query }) {
     const { userStore } = useContext(UserStoreContext);
-    console.log(userStore);
+    // console.log(userStore);
     const { data, isLoading, isError } = useCatalog(userStore.id, query);
-    console.log(data);
+    // console.log(data);
     if (isLoading) {
         return (
             <Layout>
@@ -37,7 +37,7 @@ export default function Catalog({ query }) {
     }
 
     const catalogItems = data.catalogItems.data.pageContent;
-    console.log(catalogItems);
+    // console.log(catalogItems);
     return (
         <Layout logs={data && data.logs ? data.logs : []} title="Catalog">
             <div className="container my-4 flex-grow-1">
