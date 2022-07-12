@@ -10,31 +10,39 @@ export default function CheckoutTotal({ order, data, purchase, isPuchasing }) {
                     <dt className="col-sm-6 text-muted">Subtotal</dt>
                     <dd className="col-sm-6 text-right">
                         $
-                        {Math.round(
-                            (cartTotals.totals.grossAmount + Number.EPSILON) *
-                                100
-                        ) / 100}
+                        {(
+                            Math.round(
+                                (cartTotals.totals.grossAmount +
+                                    Number.EPSILON) *
+                                    100
+                            ) / 100
+                        ).toFixed(2)}
                     </dd>
                 </dl>
                 <dl className="row">
                     <dt className="col-sm-6 text-muted">Taxes</dt>
                     <dd className="col-sm-6 text-right">
                         $
-                        {Math.round(
-                            (cartTotals.totals.taxAmounts.included +
-                                Number.EPSILON) *
-                                100
-                        ) / 100}
+                        {(
+                            Math.round(
+                                (cartTotals.totals.taxAmounts.included +
+                                    Number.EPSILON) *
+                                    100
+                            ) / 100
+                        ).toFixed(2)}
                     </dd>
                 </dl>
                 <dl className="row">
                     <dt className="col-sm-6">Total</dt>
                     <dd className="col-sm-6 text-right border-top">
                         $
-                        {Math.round(
-                            (cartTotals.totals.balanceDue + Number.EPSILON) *
-                                100
-                        ) / 100}
+                        {(
+                            Math.round(
+                                (cartTotals.totals.balanceDue +
+                                    Number.EPSILON) *
+                                    100
+                            ) / 100
+                        ).toFixed(2)}
                     </dd>
                 </dl>
                 {order.shipping && order.payment ? (

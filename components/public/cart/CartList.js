@@ -34,7 +34,7 @@ export default function CartList({ userAPICart }) {
                         <CartItem
                             location={userCart.location}
                             item={item}
-                            itemKey={item.lineID}
+                            itemKey={item.lineId}
                             key={item.lineId}
                         />
                     ))

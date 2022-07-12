@@ -189,9 +189,10 @@ const CatalogItem = ({ id }) => {
                                         className="bd-highlight"
                                     >
                                         {
-                                            data.catalogItem.data.item
-                                                .shortDescription.values[0]
-                                                .value
+                                            data.catalogItem.data.item.shortDescription.values.filter(
+                                                (element) =>
+                                                    element.locale == "en-US"
+                                            )[0].value
                                         }
                                     </CardTitle>
                                 )}
@@ -219,7 +220,9 @@ const CatalogItem = ({ id }) => {
                                                 <h3 className="text-muted">
                                                     {data.catalogItem.data
                                                         .itemPrices
-                                                        ? `${data.catalogItem.data.itemPrices[0].price}`
+                                                        ? `${data.catalogItem.data.itemPrices[0].price.toFixed(
+                                                              2
+                                                          )}`
                                                         : "Not available at this store"}
                                                 </h3>
                                             )}

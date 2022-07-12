@@ -18,10 +18,10 @@ export default function Cart() {
         fetchCart();
     }, [userCart]);
 
-    // useEffect(() => {
-    //     console.log("meow");
-    //     console.log(data);
-    // });
+    useEffect(() => {
+        console.log("meow");
+        console.log(data);
+    });
 
     const fetchCart = () => {
         mutate(`/api/cart/${userStore.id}/${userCart.location}`);
@@ -138,6 +138,7 @@ export default function Cart() {
 }
 
 const CartLayout = ({ data, children }) => {
+    console.log(children);
     return (
         <Layout logs={data && data.logs ? data.logs : []} title="Cart">
             <Container className="my-4 flex-grow-1">

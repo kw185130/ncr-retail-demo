@@ -7,6 +7,8 @@ module.exports = {
             "www.google.com",
             "https://www.google.com",
             "i.imgur.com",
+            "live.staticflickr.com",
+            "upload.wikimedia.org",
         ],
     },
     eslint: {

@@ -2,7 +2,7 @@ import { createOrder } from "~/lib/order";
 import { updateUserCartStatus } from "~/lib/cart";
 
 export default async function handler(req, res) {
-    console.log("order called)")
+    console.log("order called");
     if (req.method === "POST") {
         let logs = [];
         let body = JSON.parse(req.body);
@@ -58,13 +58,13 @@ export default async function handler(req, res) {
 
         lineItems.forEach((item) => {
             order["orderLines"].push({
-                lineId: item.lineID,
+                lineId: item.lineId,
                 description: item.description,
                 extendedAmount: item.extendedAmount,
                 itemType: item.itemType,
                 quantity: item.quantity,
                 taxes: item.taxes,
-                unitPrice: item.price.unitPrice,
+                unitPrice: item.price.unitPrice.toFixed(2),
                 scanData: item.scanData,
             });
         });

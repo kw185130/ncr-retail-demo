@@ -11,9 +11,10 @@ export default async function handler(req, res) {
         let cart = await createCart(body.siteId);
 
         logs.push(cart.log);
+        console.log(cart);
 
         let location = cart.headers.get("location");
-        // console.log(location)
+        console.log(location);
         let etag = cart.headers.get("ETag");
         // let cartId = location.split('/')[2];
         let cartId = location.slice(6);
@@ -49,6 +50,7 @@ export default async function handler(req, res) {
                 break;
             }
         }
+        console.log("update " + update);
         if (!update) {
             let obj = {
                 itemId: item.itemId.itemCode,
@@ -75,7 +77,7 @@ export default async function handler(req, res) {
                 },
             };
 
-            let lineId = update.lineID;
+            let lineId = update.lineId;
             let updateItemInCart = await updateItemInCartById(
                 body.siteId,
                 cartId,
