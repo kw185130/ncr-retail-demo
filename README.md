@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d585167b-6b9c-47ec-8d22-5a1a9e03e737/deploy-status)](https://app.netlify.com/sites/gokart-project/deploys)
+
 <h1 align="center">
 <br>
 <a href="https://retaildemo.ncrcloud.com" target="_blank"><img src="./public/mart-banner.png" alt="MART" height="auto" width="100%" /></a>

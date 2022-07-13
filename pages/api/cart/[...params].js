@@ -1,7 +1,7 @@
 import { getCartById, getCartItemsById, deleteCart } from "~/lib/cart";
 
 export default async function handler(req, res) {
-    console.log("here");
+    // console.log("here");
     let siteId = req.query.params[0];
     let cartId = req.query.params[1];
     if (req.method == "DELETE") {

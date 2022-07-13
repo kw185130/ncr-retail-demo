@@ -35,7 +35,7 @@ export default function Catalog({ query }) {
     }
 
     const catalogItems = data.catalogItems.data.pageContent;
-    console.log(catalogItems);
+    // console.log(catalogItems);
     return (
         <Layout logs={data && data.logs ? data.logs : []} title="Catalog">
             <div className="container my-4 flex-grow-1">
