@@ -7,9 +7,7 @@ import Layout from "~/components/public/Layout";
 
 export default function Catalog({ query }) {
     const { userStore } = useContext(UserStoreContext);
-    console.log(userStore);
     const { data, isLoading, isError } = useCatalog(userStore.id, query);
-    console.log(data);
     if (isLoading) {
         return (
             <Layout>
