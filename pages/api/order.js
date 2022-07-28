@@ -24,7 +24,7 @@ export default async function handler(req, res) {
             totals: [
                 {
                     type: "Net",
-                    value: cart.totals.netAmount,
+                    value: cart.totals.grandAmount,
                 },
             ],
             fulfillment: {
