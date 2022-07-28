@@ -63,7 +63,7 @@ export default async function handler(req, res) {
                 extendedAmount: item.extendedAmount,
                 itemType: item.itemType,
                 quantity: item.quantity,
-                taxes: item.taxes,
+                taxes: item.taxes[0],
                 unitPrice: item.price.unitPrice.toFixed(2),
                 scanData: item.scanData,
             });
@@ -71,7 +71,7 @@ export default async function handler(req, res) {
 
         // console.log("here creating order");
         let result = await createOrder(store.id, order);
-        // console.log(result);
+        console.log(result);
         logs.push(result.log);
 
         let userCart = body.userCart;
@@ -80,6 +80,7 @@ export default async function handler(req, res) {
             userCart.location,
             "Closed"
         );
+        console.log("here");
         logs.push(userCartStatus.log);
         res.status(200).json({ response: result, logs });
     } else {
