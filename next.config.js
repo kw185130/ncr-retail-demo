@@ -9,6 +9,10 @@ module.exports = {
             "i.imgur.com",
             "live.staticflickr.com",
             "upload.wikimedia.org",
+            "m.media-amazon.com",
+            "www.vitaminworld.com",
+            "cdn.shopify.com",
+            "i5.walmartimages.com",
         ],
     },
     eslint: {
